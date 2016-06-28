@@ -2,19 +2,13 @@ var request = require('request');
 
 function qsToJson(qs) {
   var res = {};
-  if (qs) {
-    var pars = qs.split('&');
-    var kv, k, v;
-
-    for (i in pars) {
-      kv = pars[i].split('=');
-      k = kv[0];
-      v = kv[1];
-      res[k] = decodeURIComponent(v);
-    }
-  }
-  else {
-    res["error"] = "invalid response";
+  var pars = qs.split('&');
+  var kv, k, v;
+  for (i in pars) {
+    kv = pars[i].split('=');
+    k = kv[0];
+    v = kv[1];
+    res[k] = decodeURIComponent(v);
   }
   return res;
 }
@@ -28,11 +22,13 @@ exports.retrieve = function(id, callback) {
       
       // remapping urls into an array of objects
       var tmp = get_video_info["url_encoded_fmt_stream_map"];
-      tmp = tmp.split(',');
-      for (i in tmp) {
-        tmp[i] = qsToJson(tmp[i]);
+      if (tmp) {
+        tmp = tmp.split(',');
+        for (i in tmp) {
+          tmp[i] = qsToJson(tmp[i]);
+        }
+        get_video_info["url_encoded_fmt_stream_map"] = tmp;
       }
-      get_video_info["url_encoded_fmt_stream_map"] = tmp;
       
       // done
       callback(null, get_video_info);
