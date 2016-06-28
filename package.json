@@ -1,0 +1,26 @@
+{
+  "name": "youtube.get-video-info",
+  "version": "1.0.0",
+  "description": "A parser for the get_video_info request on Youtube (no API required)",
+  "main": "youtube.get-video.info.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TODO"
+  },
+  "keywords": [
+    "youtube",
+    "links",
+    "video",
+    "parser",
+    "getvideoinfo",
+    "get-video-info"
+  ],
+  "author": "pirraste",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
+}
