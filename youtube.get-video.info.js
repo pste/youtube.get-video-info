@@ -2,14 +2,19 @@ var request = require('request');
 
 function qsToJson(qs) {
   var res = {};
-  var pars = qs.split('&');
-  var kv, k, v;
-  
-  for (i in pars) {
-    kv = pars[i].split('=');
-    k = kv[0];
-    v = kv[1];
-    res[k] = decodeURIComponent(v);
+  if (qs) {
+    var pars = qs.split('&');
+    var kv, k, v;
+
+    for (i in pars) {
+      kv = pars[i].split('=');
+      k = kv[0];
+      v = kv[1];
+      res[k] = decodeURIComponent(v);
+    }
+  }
+  else {
+    res["error"] = "invalid response";
   }
   return res;
 }
