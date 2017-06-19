@@ -1,4 +1,4 @@
-var yt = require('./youtube.get-video.info');
+var yt = require('./youtube.get-video-info');
 
 function cb(err, res) {
   if (err) console.log('ERROR:', err);
