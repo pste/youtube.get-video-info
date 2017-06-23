@@ -7,7 +7,7 @@ npm install youtube.get-video-info --save
 ```
 then
 ```
-var yt = require('./youtube.get-video.info');
+var yt = require('youtube.get-video-info');
 yt.retrieve('ml-v1bgMJDQ', function(err, res) {
   if (err) throw err;
   console.log(res);
