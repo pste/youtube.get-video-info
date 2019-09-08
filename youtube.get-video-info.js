@@ -14,7 +14,7 @@ function qsToJson(qs) {
 }
 
 exports.retrieve = function(id, callback) {
-  var url = 'http://www.youtube.com/get_video_info?html5=1&video_id=' + id;
+  var url = 'https://www.youtube.com/get_video_info?html5=1&video_id=' + id;
   
   request(url, function(err, res, body) {
     if (!err && res.statusCode == 200) {
