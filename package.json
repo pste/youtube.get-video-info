@@ -1,6 +1,6 @@
 {
   "name": "youtube.get-video-info",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A parser for the get_video_info request on Youtube (no API required)",
   "main": "youtube.get-video-info.js",
   "scripts": {
