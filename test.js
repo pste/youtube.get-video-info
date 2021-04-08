@@ -1,8 +1,11 @@
-var yt = require('youtube.get-video-info');
+const yt = require('./youtube.get-video-info');
 
-function cb(err, res) {
-  if (err) console.log('ERROR:', err);
-  else console.log(res);
-}
+(async () => {
+    try {
+        const result = await yt.retrieve('ml-v1bgMJDQ');
+        console.log(result);
+    } catch (e) {
+        console.log('Error: ', e);
+    }
+})();
 
-yt.retrieve('ml-v1bgMJDQ', cb);
